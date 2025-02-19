@@ -49,6 +49,28 @@ public class ConsentApi {
 
     }
 
+    /**
+     *
+     * test
+     */
+    @GET
+    @Path("/get")
+    @Consumes({"application/x-www-form-urlencoded"})
+    @Produces({"application/json; charset=utf-8"})
+    public Response search(@Context HttpServletRequest request, @Context HttpServletResponse response,
+                           @Context UriInfo uriInfo) {
+
+        try {
+
+            return Response.ok(request.getPathInfo()).build();
+
+        } catch (Exception e) {
+            log.error("Error occurred while searching consent data", e);
+            return Response.ok(e).build();
+        }
+
+
+    }
 
 
 //
