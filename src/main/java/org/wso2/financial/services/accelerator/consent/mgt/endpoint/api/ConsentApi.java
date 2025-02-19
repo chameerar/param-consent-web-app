@@ -57,7 +57,7 @@ public class ConsentApi {
     @Path("/get")
     @Consumes({"application/x-www-form-urlencoded"})
     @Produces({"application/json; charset=utf-8"})
-    public Response search(@Context HttpServletRequest request, @Context HttpServletResponse response,
+    public Response getTest(@Context HttpServletRequest request, @Context HttpServletResponse response,
                            @Context UriInfo uriInfo) {
 
         try {
@@ -73,36 +73,8 @@ public class ConsentApi {
     }
 
 
-//
-//    /**
-//     * ConsentCreateEndpoint.
-//     */
-//    @GET
-//    @Path("/search")
-//    @Consumes({"application/x-www-form-urlencoded"})
-//    @Produces({"application/json; charset=utf-8"})
-//    public Response search(@Context HttpServletRequest request, @Context HttpServletResponse response,
-//                           @Context UriInfo uriInfo) {
-//
-//        try {
-//
-//            ConsentMgtApiHandler consentMgtApiHandler = new ConsentMgtApiHandler();
-//            ConsentMgtDTO consentMgtDTO = new ConsentMgtDTO(ConsentUtils.getHeaders(request).get("client_id"),
-//                    ConsentUtils.getHeaders(request),
-//                    ConsentUtils.getPayload(request), uriInfo.getQueryParameters(),
-//                    uriInfo.getPathParameters().getFirst("s"), uriInfo.getAbsolutePath().getPath(), request,
-//                    response);
-//            consentMgtApiHandler.handleSearch(consentMgtDTO);
-//            return sendResponse(consentMgtDTO);
-//
-//        } catch (Exception e) {
-//            log.error("Error occurred while searching consent data", e);
-//            return Response.ok(e).build();
-//        }
-//
-//
-//    }
-//
+
+
 //    /**
 //     * ConsentCreateEndpoint.
 //     */

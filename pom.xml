@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.wso2</groupId>
   <artifactId>consent-docker</artifactId>
-  <packaging>war</packaging>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>consent-docker Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -125,6 +125,29 @@
       <artifactId>mysql-connector-j</artifactId>
       <version>9.2.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.wso2.financial.services.accelerator</groupId>
+      <artifactId>org.wso2.financial.services.accelerator.common</artifactId>
+      <version>4.0.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.wso2.financial.services.accelerator</groupId>
+      <artifactId>org.wso2.financial.services.accelerator.consent.mgt.extensions</artifactId>
+      <version>4.0.0-SNAPSHOT</version>
+
+    </dependency>
+    <dependency>
+      <groupId>org.wso2.financial.services.accelerator</groupId>
+      <artifactId>org.wso2.financial.services.accelerator.consent.mgt.service</artifactId>
+      <version>4.0.0-SNAPSHOT</version>
+
+    </dependency>
+    <dependency>
+      <groupId>org.wso2.financial.services.accelerator</groupId>
+      <artifactId>org.wso2.financial.services.accelerator.consent.mgt.dao</artifactId>
+      <version>4.0.0-SNAPSHOT</version>
+
+    </dependency>
     <!--            <groupId>org.springframework</groupId>-->
     <!--            <artifactId>spring-context</artifactId>-->
     <!--        </dependency>-->
@@ -151,4 +174,12 @@
   <build>
     <finalName>consent</finalName>
   </build>
+  <modules>
+    <module>components/org.wso2.financial.services.accelerator.common</module>
+    <module>components/org.wso2.financial.services.accelerator.consent.mgt.dao</module>
+    <module>components/org.wso2.financial.services.accelerator.consent.mgt.service</module>
+    <module>components/org.wso2.financial.services.accelerator.consent.mgt.extensions</module>
+
+
+  </modules>
 </project>
