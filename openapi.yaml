@@ -5,7 +5,7 @@ info:
 servers:
   - url: http://localhost:8080
 paths:
-  /consent:
+  /consent/admin/get:
     get:
       tags:
         - default
