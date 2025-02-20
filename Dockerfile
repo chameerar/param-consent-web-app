@@ -6,9 +6,12 @@ WORKDIR /app
 
 # Copy project files
 COPY . .
+RUN addgroup -g 10014 choreo && \
+    adduser  --disabled-password  --no-create-home --uid 10014 --ingroup choreo choreouser
 USER 10014
 # Build the WAR file
 RUN mvn clean package -DskipTests
+
 
 # # https://security.alpinelinux.org/vuln/CVE-2021-46848
 # RUN apk add --upgrade libtasn1-progs
