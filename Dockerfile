@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copy project files
 COPY . .
-
+USER 10014
 # Build the WAR file
 RUN mvn clean package -DskipTests
 
@@ -21,10 +21,9 @@ RUN mvn clean package -DskipTests
 # RUN addgroup -g 10014 choreo && \
 #     adduser  --disabled-password  --no-create-home --uid 10014 --ingroup choreo choreouser
 
-USER 10014
 FROM tomcat:9.0-jdk11
 ENV CONTEXT_URL="https://your-storage-bucket/context.xml"
-
+USER 10014
 # RUN cp -r $CATALINA_HOME/webapps.dist/* $CATALINA_HOME/webapps
 COPY --from=builder /app/target/*.war /usr/local/tomcat/webapps/consent.war
 EXPOSE 8080
