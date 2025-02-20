@@ -1,8 +1,6 @@
 package org.wso2.financial.services.accelerator.consent.mgt.endpoint.api;
 
 //import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 //import org.json.JSONObject;
 //import org.wso2.financial.services.accelerator.common.exception.ConsentManagementException;
 //import org.wso2.financial.services.accelerator.consent.mgt.dao.models.ConsentResource;
@@ -42,7 +40,7 @@ import javax.ws.rs.core.UriInfo;
 public class ConsentApi {
 
 
-    private static final Log log = LogFactory.getLog(ConsentApi.class);
+//    private static final Log log = LogFactory.getLog(ConsentApi.class);
 
     public ConsentApi() {
 
@@ -65,7 +63,7 @@ public class ConsentApi {
             return Response.ok(request.getPathInfo()).build();
 
         } catch (Exception e) {
-            log.error("Error occurred while searching consent data", e);
+//            log.error("Error occurred while searching consent data", e);
             return Response.ok(e).build();
         }
 
