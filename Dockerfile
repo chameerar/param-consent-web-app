@@ -17,7 +17,7 @@ RUN mvn clean package -DskipTests
 # RUN apk update && apk upgrade zlib
 
 
-Create a new user with UID 10014
+# Create a new user with UID 10014
 RUN addgroup -g 10014 choreo && \
     adduser  --disabled-password  --no-create-home --uid 10014 --ingroup choreo choreouser
 
