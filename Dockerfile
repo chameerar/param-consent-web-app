@@ -34,6 +34,7 @@ RUN adduser \
   --shell "/sbin/nologin" \
   --no-create-home \
   --uid 10014 \
-  "choreo"
+  "choreo" \
+USER 10014
 EXPOSE 8080
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
