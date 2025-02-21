@@ -28,4 +28,14 @@ ENV CONTEXT_URL="https://your-storage-bucket/context.xml"
 # RUN cp -r $CATALINA_HOME/webapps.dist/* $CATALINA_HOME/webapps
 COPY --from=builder /app/target/*.war /usr/local/tomcat/webapps/consent.war
 EXPOSE 8080
+RUN adduser \
+  --disabled-password \
+  --gecos "" \
+  --home "/nonexistent" \
+  --shell "/sbin/nologin" \
+  --no-create-home \
+  --uid 10014 \
+  "choreo"
+# Use the above created unprivileged user
+USER 10014
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
